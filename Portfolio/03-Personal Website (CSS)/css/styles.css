@@ -1,3 +1,34 @@
-body {
-  margin: 0;
+.flag{
+    border: none;
+    width: 100px;
+
+}
+
+#Los_angeles{
+    width: 30px;
+    border: solid;
+}
+li{
+    text-decoration: underline;
+}
+
+.mex{
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
+}
+
+#Chicago{
+    border-top: 6px dotted red;
+}
+
+#FvoriteFood li{
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+h2:hover{
+    color: blueviolet;
+    font-weight: bolder;
 }
