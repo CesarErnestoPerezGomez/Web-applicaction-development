@@ -1,3 +1,38 @@
-body {
-    margin: 0;
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.top-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    background-color: lightcoral;
+    border: 10px solid darkred;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.middle-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    background-color: lightgreen;
+    border: 20px solid darkgreen;
+}
+
+.bottom-container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    background-color: lightblue;
+    border: 10px solid darkblue;
 }
