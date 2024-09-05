@@ -1,3 +1,33 @@
-body {
-    margin: 0;
+.box {
+    width: 200px;
+    height: 200px;
+    border: 2px solid black;
+}
+
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.column-layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.flag-layout {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
