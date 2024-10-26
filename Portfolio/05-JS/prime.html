@@ -1,22 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prime Factors</title>
-    <script type="text/javascript" src="js/prime.js"></script>
+    <title>Prime Factorization</title>
+    <script src="prime.js" defer></script>
 </head>
-
 <body>
-    <div>
-        <label for="num">Write a number</label>
-        <input type="text" id="num" />
-        <button id="btn" onclick="getPrimeFactors()"> Go </button>
-        <br />
-        <span id="pf"></span>
-    </div>
-</body>
+    <h1>Prime Factorization</h1>
+    <p>Enter a number to find its prime factors:</p>
+    
+    <input type="number" id="numberInput" placeholder="Enter a number" min="2">
+    <button onclick="displayPrimeFactors()">Find Prime Factors</button>
+    
 
+    <h3>Prime Factors:</h3>
+    <div id="result"></div>
+
+    <script>
+        function displayPrimeFactors() {
+            const numberInput = document.getElementById("numberInput").value;
+            const resultElement = document.getElementById("result");
+
+
+            const primeFactors = getPrimeFactors(Number(numberInput));
+            
+
+            resultElement.textContent = primeFactors.length > 0 
+                ? primeFactors.join(", ")
+                : "No prime factors found";
+        }
+    </script>
+</body>
 </html>
