@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wazzup Page</title>
+    <script>
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const index = urlParams.get('index');
+
+            fetch('/greet')
+                .then(response => response.json())
+                .then(data => {
+                    if (index >= 0 && index < data.length) {
+                        document.getElementById('message').innerText = `Wazzup, ${data[index]}!`;
+                    } else {
+                        document.getElementById('message').innerText = 'User not found.';
+                    }
+                });
+        }
+    </script>
+</head>
+<body>
+    <h1 id="message">Loading...</h1>
+    <a href="/">Back to Index</a>
+</body>
+</html>

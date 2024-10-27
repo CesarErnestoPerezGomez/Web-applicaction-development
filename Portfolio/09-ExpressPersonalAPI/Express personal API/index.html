@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Page</title>
+    <script>
+        // Función para saludar al usuario
+        function greetUser() {
+            const name = document.getElementById('nameInput').value;
+            if (name) {
+                fetch(`/greet?name=${name}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        document.getElementById('greeting').innerText = `Hello, ${name}!`;
+                        updateNamesList(data); // Actualiza la lista de nombres
+                    });
+            }
+            return false; // Previene el envío del formulario
+        }
+
+        // Función para actualizar la lista de nombres
+        function updateNamesList(names) {
+            const namesList = document.getElementById('namesList');
+            namesList.innerHTML = ''; // Limpia la lista actual
+            names.forEach((name, index) => {
+                const li = document.createElement('li');
+                li.innerHTML = `<a href="wazzup.html?index=${index}">${name}</a>`;
+                namesList.appendChild(li);
+            });
+        }
+
+        // Función para agregar tarea
+        function addTask() {
+            const taskInput = document.getElementById('taskInput');
+            const task = taskInput.value;
+            if (task) {
+                fetch('/task', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ task: task }) // Envía la tarea como JSON
+                })
+                .then(response => response.json())
+                .then(data => {
+                    updateTaskList(data); // Actualiza la lista de tareas
+                });
+                taskInput.value = ''; // Limpia el campo de entrada
+            }
+            return false; // Previene el envío del formulario
+        }
+
+        // Función para actualizar la lista de tareas
+        function updateTaskList(tasks) {
+            const taskList = document.getElementById('taskList');
+            taskList.innerHTML = ''; // Limpia la lista actual
+            tasks.forEach((task, index) => {
+                const li = document.createElement('li');
+                li.innerText = task;
+                li.innerHTML += ` <button onclick="deleteTask(${index})">Delete</button>`;
+                taskList.appendChild(li);
+            });
+        }
+
+        // Función para eliminar tarea
+        function deleteTask(index) {
+            fetch(`/task/${index}`, {
+                method: 'DELETE' // Envía la solicitud de eliminación
+            })
+            .then(response => response.json())
+            .then(data => {
+                updateTaskList(data); // Actualiza la lista de tareas
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>Welcome!</h1>
+    <form onsubmit="return greetUser();">
+        <input type="text" id="nameInput" placeholder="Enter your name" required>
+        <button type="submit">Greet</button>
+    </form>
+    <p id="greeting"></p> <!-- Mensaje de saludo -->
+
+    <h2>TODO List</h2>
+    <form onsubmit="return addTask();">
+        <input type="text" id="taskInput" placeholder="Add a new task" required>
+        <button type="submit">Add Task</button>
+    </form>
+    <ul id="taskList">
+        <!-- Las tareas se llenarán aquí -->
+    </ul>
+
+    <h2>Names List</h2>
+    <ul id="namesList">
+        <!-- Los nombres se llenarán aquí -->
+    </ul>
+</body>
+</html>
