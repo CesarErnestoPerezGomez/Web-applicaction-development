@@ -1,3 +1,88 @@
 body {
-  margin: 0;
+    font-family: 'Merriweather', serif;
+    text-align: center;
+    background-color: AliceBlue; 
+}
+
+h1 {
+    font-family: 'Sacramento', cursive;
+    font-size: 5.5rem;
+    color: Tomato; 
+    margin: 50px 0;
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    padding-bottom: 10px;
+    color: MediumSeaGreen;
+}
+
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: OrangeRed;
+}
+
+hr {
+    border: 0;
+    border-top: 6px dotted BlueViolet;
+    width: 4%;
+    margin: 100px auto;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: Gold; /
+}
+
+a:hover {
+    color: DeepPink;
+}
+
+tform {
+    border: 2px dotted LightSeaGreen;
+    background-color: White; 
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid LightCyan;
+    padding: 8px;
+}
+
+th {
+    background-color: HotPink;
+    color: white;
+}
+
+td img {
+    max-width: 100px;
+    border-radius: 50%;
+}
+
+form {
+    border: 2px dotted LightSeaGreen;
+    background-color: White; 
+    padding: 20px;
+    border-radius: 10px;
+}
+
+input, select, textarea {
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+img {
+    border-radius: 50%;
+    max-width: 100px;
 }
