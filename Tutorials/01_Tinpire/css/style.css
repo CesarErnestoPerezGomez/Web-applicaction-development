@@ -1,19 +1,46 @@
 .gradient-background {
-  background: linear-gradient(300deg, #feffff, #070100, #ff4c68);
-  background-size: 180% 180%;
-  animation: gradient-animation 18s ease infinite;
-}
-
-@keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%;
+    background: linear-gradient(300deg, #feffff, #070100, #ff4c68);
+    background-size: 180% 180%;
+    animation: gradient-animation 18s ease infinite;
   }
-
-  50% {
-    background-position: 100% 50%;
+  
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
   }
-
-  100% {
-    background-position: 0% 50%;
+  
+  .rounded-circle {
+    border-radius: 50%;
+    border: 2px solid #fff;
   }
-}
+  
+  #footer img {
+    margin-top: 10px;
+    width: 100px;
+  }
+  
+  #title img {
+    max-width: 70%;
+  }
+  
+  #testimonial img {
+    width: 120px;
+    height: 120px;
+  }
+  
+  #pricing .card-title {
+    font-size: 2rem;
+  }
+  
+  #features img {
+    background-color: #f8f9fa;
+    padding: 10px;
+  }
+  
