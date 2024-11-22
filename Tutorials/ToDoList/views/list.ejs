@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= listTitle %></title>
+  <link rel="stylesheet" href="/public/css/styles.css">
+</head>
+<body>
+  <div class="box">
+    <h1><%= listTitle %></h1>
+    <form action="/" method="post">
+      <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+      <button type="submit">+</button>
+      <input type="hidden" name="list" value="<%= listTitle %>">
+    </form>
+    <ul>
+      <% newListItems.forEach(function(item) { %>
+        <form action="/delete" method="post">
+          <li>
+            <input type="checkbox" name="checkbox" value="<%= item._id %>" onchange="this.form.submit()">
+            <%= item.name %>
+          </li>
+          <input type="hidden" name="listName" value="<%= listTitle %>">
+        </form>
+      <% }); %>
+    </ul>
+  </div>
+</body>
+</html>
