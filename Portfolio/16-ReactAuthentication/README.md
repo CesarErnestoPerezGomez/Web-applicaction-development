@@ -1,3 +1,5 @@
+Profe para ver las paginas de login y signup para meterse necesita poner en el link de la pagina al final /login o /signup y hay se ve que hice el requerimiento de este problema, muchas gracias.
+
 # React Authentication
 
 ---
