@@ -1,3 +1,5 @@
+Teacher in order to run this code you need to make the command npm install and then npm start. Thank you
+
 # Keeper App
 
 ## Leg 1
